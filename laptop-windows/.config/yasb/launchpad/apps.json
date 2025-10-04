@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Notion",
+    "path": "C:\\Users\\yuzup\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Notion.lnk",
+    "icon": "C:\\Users\\yuzup\\.config\\yasb\\launchpad\\icons\\notion_1759018420146.png",
+    "type": "app",
+    "id": 1759018420149
+  },
+  {
+    "title": "Slack",
+    "path": "explorer.exe shell:AppsFolder\\91750D7E.Slack_8she8kybcnzg4!Slack",
+    "icon": "C:\\Users\\yuzup\\.config\\yasb\\launchpad\\icons\\slack_1759018722861.png",
+    "type": "app",
+    "id": 1759018722862
+  },
+  {
+    "title": "Visual Studio Code",
+    "path": "C:\\Users\\yuzup\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio Code\\Visual Studio Code.lnk",
+    "icon": "C:\\Users\\yuzup\\.config\\yasb\\launchpad\\icons\\visual_studio_code_1759018739019.png",
+    "type": "app",
+    "id": 1759018739021
+  },
+  {
+    "title": "Cursor",
+    "path": "C:\\Users\\yuzup\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Cursor.lnk",
+    "icon": "C:\\Users\\yuzup\\.config\\yasb\\launchpad\\icons\\cursor_1759018862148.png",
+    "type": "app",
+    "id": 1759018862149
+  },
+  {
+    "title": "GitHub Desktop",
+    "path": "C:\\Users\\yuzup\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\GitHub, Inc\\GitHub Desktop.lnk",
+    "icon": "C:\\Users\\yuzup\\.config\\yasb\\launchpad\\icons\\github_desktop_1759018878159.png",
+    "type": "app",
+    "id": 1759018878160
+  }
+]
