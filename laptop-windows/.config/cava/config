@@ -1,0 +1,257 @@
+## CAVAの設定ファイル。
+# パラメータを変更するには、;を削除してください。
+
+[general]
+
+# スムージングモード。'normal'、'scientific'、'waves'のいずれかを指定できます。0.6.0以降は非推奨
+; mode = normal
+
+# 非負の値のみ受け付けます。
+; framerate = 60
+
+# 'autosens'はバーがピークに達した場合に感度を下げようとします。1 = オン、0 = オフ
+# 0.6.0以降の新機能、低値のautosens（ダイナミックレンジ）
+# 'overshoot'はautosensを開始せずにバーがオーバーシュートすることを許可します（ターミナルの高さの%で）。0.6.0以降は非推奨
+; autosens = 1
+; overshoot = 20
+
+# 手動感度（%）。autosensが有効な場合、これは初期値に過ぎません。
+# 200は高さが2倍を意味します。非負の値のみ受け付けます。
+; sensitivity = 100
+
+# バーの数（0-512）。0は自動設定（コンソールを埋める）に設定します。
+# バーの幅とバー間のスペースは文字数で指定します。
+; bars = 0
+; bar_width = 2
+; bar_spacing = 1
+# bar_heightは"noritake"形式の出力でのみ使用されます
+; bar_height = 32
+
+# SDLの場合、幅とバー間のスペースはピクセル単位で、デフォルトは次のとおりです：
+; bar_width = 20
+; bar_spacing = 5
+
+# sdl_glslにはこれらのデフォルト値があり、最大バー数を計算するためにのみ使用されます。
+; bar_width = 1
+; bar_spacing = 0
+
+# 最低および最高バーの下限および上限周波数
+# ビジュアライザーの帯域幅。
+# 注意：バーの数×43Mhzの最小総帯域幅があります。
+# Cavaは、指定された帯域が低すぎる場合、自動的に上限を増加させます。
+; lower_cutoff_freq = 50
+; higher_cutoff_freq = 10000
+
+# 入力がない状態が続く秒数。Cavaはスリープモードに移行します。CavaはFFTや描画を行わず、1秒ごとに入力を確認するだけです。入力が検出されるとCavaは起動します。0 = 無効。
+; sleep_timer = 0
+
+[input]
+
+# オーディオキャプチャ方法。可能な方法は：'fifo'、'portaudio'、'pipewire'、'alsa'、'pulse'、'sndio'、'oss'、'jack'、'shmem'
+# デフォルトは、Cavaがビルドされたサポートに依存して、'oss'、'pipewire'、'sndio'、'jack'、'pulse'、'alsa'、'portaudio'、'fifo'の順です。
+# Macでは、デフォルトは'portaudio'または'fifo'です。
+# Windowsでは自動で、入力設定は不要です。
+#
+# すべての入力方法は、オーディオを取得する場所を定義するために同じ設定変数'source'を使用します。
+#
+# pulseaudioとpipewireの場合、'source'はソースになります。デフォルトは'auto'で、デフォルトのシンクのモニターソースを使用します
+# （すべてのpulseaudioシンク（出力）には、それに関連付けられたモニターソース（入力）があります）。
+#
+# pipewireの場合、'source'はキャプチャするデバイスのオブジェクト名またはobject.serialになります。
+# 入力デバイスと出力デバイスの両方がサポートされています。
+#
+# alsaの場合、'source'はキャプチャデバイスになります。
+# fifoの場合、'source'はfifoファイルへのパスになります。
+# shmemの場合、'source'は/squeezelite-AA:BB:CC:DD:EE:FFで、'AA:BB:CC:DD:EE:FF'はsqueezeliteのMACアドレスになります。
+#
+# sndioの場合、'source'は生の録音オーディオ記述子またはモニタリングサブデバイスになります。例：'rsnd/2'または'snd/1'。デフォルトは'default'です。
+# README.mdにはsndio用のCAVAのセットアップ方法に関する詳細情報が含まれています。
+#
+# ossの場合、'source'はオーディオデバイスへのパスになります。例：'/dev/dsp2'。デフォルトは'/dev/dsp'、つまりデフォルトのオーディオデバイスです。
+# README.mdにはFreeBSDでのOSS用のCAVAのセットアップ方法に関する詳細情報が含まれています。
+#
+# jackの場合、'source'は接続するJACKサーバーの名前になります。例：'foobar'。デフォルトは'default'です。
+# README.mdにはJACK用のCAVAのセットアップ方法に関する詳細情報が含まれています。
+#
+; method = pulse
+; source = auto
+
+; method = pipewire
+; source = auto
+
+; method = alsa
+; source = hw:Loopback,1
+
+; method = fifo
+; source = /tmp/mpd.fifo
+
+; method = shmem
+; source = /squeezelite-AA:BB:CC:DD:EE:FF
+
+; method = portaudio
+; source = auto
+
+; method = sndio
+; source = default
+
+; method = oss
+; source = /dev/dsp
+
+; method = jack
+; source = default
+
+# オプション'sample_rate'、'sample_bits'、'channels'、'autoconnect'は一部の入力方法で設定できます：
+#   sample_rate: fifo, pipewire, sndio, oss
+#   sample_bits: fifo, pipewire, sndio, oss
+#   channels:    sndio, oss, jack
+#   autoconnect: jack
+# 他の方法はこれらの設定を無視します。
+#
+# 'sndio'と'oss'の場合、これらは優先値に過ぎません。つまり、選択されたオーディオデバイスがサポートしていない場合、デバイスは他のサポートされている値を使用します。
+# 例：48000、32、2ですが、デバイスが44100、16、1のみサポートしている場合、44100、16、1を使用します。
+#
+; sample_rate = 44100
+; sample_bits = 16
+; channels = 2
+; autoconnect = 2
+
+[output]
+
+# 出力方法。'ncurses'、'noncurses'、'raw'、'noritake'、'sdl'、'sdl_glsl'のいずれかを指定できます。
+# 'noncurses'（デフォルト）は、バッファとカーソル移動を使用して、ターミナル内のフレームからフレームへの変更のみを印刷します。リソースをあまり使用せず、'ncurses'よりもティアリング（vsyncの問題）が少ないです。
+#
+# 'raw'は、バーの高さの8ビットまたは16ビット（'bit_format'オプションで設定可能）データストリームで、他のアプリケーションに送信するために使用できます。
+# 'raw'のデフォルトは200バーで、上記の'bars'オプションで調整できます。
+#
+# 'noritake'は、Noritake VFDディスプレイがグラフィックモードで期待する形式でビットマップを出力します。現在のところ、3000シリーズのグラフィカルVFDのみをサポートしています。
+#
+# 'sdl'は、グラフィカルコンテキストでレンダリングするためにSimple DirectMedia Layerを使用します。
+# 'sdl_glsl'は、SDLを使用してOpenGLコンテキストを作成します。独自のシェーダーを作成するか、事前定義されたものを使用します。
+; method = noncurses
+
+# ビジュアライゼーションの向き。'bottom'、'top'、'left'、'right'、'horizontal'のいずれかを指定できます。デフォルトは'bottom'です。'left'と'right'はsdlとncurses出力でのみサポートされています。'horizontal'（バーが中心から上下に移動）はnoncurses出力でのみサポートされています。
+# 注意：多くのフォントは、'bottom'以外の向きで使用される文字に対して奇妙または欠落したグリフを持っているため、出力が正しく見えないことがあります。
+; orientation = bottom
+
+# ビジュアルチャンネル。'stereo'または'mono'を指定できます。
+# 'stereo'は、低周波数を中心にして両方のチャンネルをミラーリングします。
+# 'mono'は、左から右に最低から最高の周波数を出力します。
+# 'mono_option'は、'left'、'right'、'average'のいずれかから入力を取得するようにmonoを設定します。
+# 'reverse'を1に設定すると、周波数を逆に表示します。
+; channels = stereo
+; mono_option = average
+; reverse = 0
+
+# 生の出力ターゲット。
+# Linuxでは、ターゲットが存在しない場合、fifoが作成されます。
+# Windowsでは、ターゲットが存在しない場合、名前付きパイプが作成されます。
+; raw_target = /dev/stdout
+
+# 生データ形式。'binary'または'ascii'を指定できます。
+; data_format = binary
+
+# バイナリビット形式。'8bit'（0-255）または'16bit'（0-65530）を指定できます。
+; bit_format = 16bit
+
+# Asciiの最大値。'ascii'モードでは、範囲は0からここで指定された値までになります。
+; ascii_max_range = 1000
+
+# Asciiの区切り文字。ascii形式では、各バーとフレームが区切り文字で区切られます。
+# asciiテーブルの10進値を使用します（例：59 = ';'、10 = '\n'（改行））。
+; bar_delimiter = 59
+; frame_delimiter = 10
+
+# sdlウィンドウのサイズと位置。-1,-1は中央です。
+; sdl_width = 1000
+; sdl_height = 500
+; sdl_x = -1
+; sdl_y= -1
+; sdl_full_screen = 0
+
+# x軸のバーにラベルを設定します。'frequency'または'none'を指定できます。デフォルトは'none'です。
+# 'frequency'は、バーの下限周波数を上に表示します。
+# ncursesとnoncurses出力でのみサポートされています。
+; xaxis = none
+
+# 同期同期を有効にします。1 = オン、0 = オフ
+# alacrittyターミナルエミュレータでのちらつきを除去します。
+# 他のターミナルエミュレータでの動作が不明なため、デフォルトはオフです。
+; synchronized_sync = 0
+
+# sdl_glsl用のシェーダー、$HOME/.config/cava/shadersにあります。
+; vertex_shader = pass_through.vert
+; fragment_shader = bar_spectrum.frag
+
+; glsl出力モードの場合、オーディオがなくてもレンダリングを続けます。
+; continuous_rendering = 0
+
+# ttyでのコンソールブランク（スクリーンセーバー）を無効にします。
+# （FreeBSDではサポートされていません）
+; disable_blanking = 0
+
+# アイドル時に画面の下部にフラットバーを表示します。1 = オン、0 = オフ
+; show_idle_bar_heads = 1
+
+# 周波数スペクトラムの代わりに波形を表示します。1 = オン、0 = オフ
+; waveform = 0
+
+[color]
+
+# 色は7つの事前定義されたもののいずれかを指定できます：black、blue、cyan、green、magenta、red、white、yellow。
+# または、16進コード'#xxxxxx'で定義します（16進コードは''内にある必要があります）。ユーザー定義の色は、Gnome-terminalやrxvtのように色の定義を変更できるターミナルが必要です。
+# デフォルトは現在のターミナルの色を保持します。
+; background = default
+; foreground = default
+
+# SDLとsdl_glslは16進コードの色のみをサポートしており、これらがデフォルトです：
+; background = '#111111'
+; foreground = '#33ffff'
+
+# グラデーションモード、16進で定義された色のみがサポートされます。
+# 背景も16進で定義するか、コメントアウトしたままにする必要があります。1 = オン、0 = オフ。
+# 最大8つの異なる色を定義できます。これらは画面の下から上にかけて範囲を持ちます。
+gradient = 1
+gradient_color_1 = '#003366'
+gradient_color_2 = '#004080'
+gradient_color_3 = '#0059b3'
+gradient_color_4 = '#0073e6'
+gradient_color_5 = '#3399ff'
+gradient_color_6 = '#66b3ff'
+gradient_color_7 = '#99ccff'
+gradient_color_8 = '#99ffcc'
+
+[smoothing]
+
+# 積分スムージングのパーセンテージ値。0 - 100の値を取ります。
+# 高い値はよりスムーズですが、精度が低くなります。0で無効にします。
+# 0.8.0以降は非推奨、代わりにnoise_reductionを使用してください。
+; integral = 77
+
+# いわゆる"Monstercat smoothing"をwavesありまたはなしで無効または有効にします。0で無効にします。
+; monstercat = 0
+; waves = 0
+
+# "ドロップオフ"の重力パーセンテージを設定します。高い値はバーがより速く落ちることを意味します。
+# 非負の値のみ受け付けます。50は半重力、200は2倍を意味します。0で"ドロップオフ"を無効にします。
+# 0.8.0以降は非推奨、代わりにnoise_reductionを使用してください。
+; gravity = 100
+
+# バーの高さで、これより低いバーは描画されません。
+# 0.8.0以降は非推奨
+; ignore = 0
+
+# ノイズリダクション、int 0 - 100。デフォルトは77
+# 生のビジュアライゼーションは非常にノイズが多く、このファクターは積分と重力フィルターを調整して信号をスムーズに保ちます。
+# 100は非常に遅くスムーズになり、0は速くなりますがノイズが多くなります。
+; noise_reduction = 77
+
+[eq]
+
+# これは難しいです。キーを好きなだけ持つことができます。
+# 複数のキーをコメント解除することを忘れないでください！キーが多いほど精度が高くなります。
+# 詳細な説明と例については、githubのreadme.mdを参照してください。
+; 1 = 1 # ベース
+; 2 = 1
+; 3 = 1 # ミッドトーン
+; 4 = 1
+; 5 = 1 # トレブル
