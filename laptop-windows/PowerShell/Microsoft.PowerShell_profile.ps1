@@ -1,6 +1,8 @@
 oh-my-posh init pwsh | Invoke-Expression
 
-Get-Content "C:\Users\yuzup\Documents\shell_ascii_art.txt" | Write-Host
+Get-Content "C:\Users\yuzup\Documents\shell_ascii_art.txt" | ForEach-Object {
+    Write-Host $_ -ForegroundColor Cyan
+}
 
 oh-my-posh init pwsh --config $env:POSH_THEMES_PATH/easy-term.omp.json | Invoke-Expression
 
