@@ -3134,3 +3134,56 @@ widgets:
 2025-10-08 20:00:16,717 [DEBUG] [MainThread] [systray_widget/systray.py:498]: Updating current state
 2025-10-08 20:00:22,652 [DEBUG] [MainThread] [systray_widget/systray.py:476]: Re-sorting widgets
 2025-10-08 20:00:22,652 [DEBUG] [MainThread] [systray_widget/systray.py:498]: Updating current state
+2025-10-08 20:30:52,578 [DEBUG] [MainThread] [systray_widget/systray.py:476]: Re-sorting widgets
+2025-10-08 20:30:52,580 [DEBUG] [MainThread] [systray_widget/systray.py:498]: Updating current state
+2025-10-08 22:21:30,527 [DEBUG] [MainThread] [systray_widget/systray.py:476]: Re-sorting widgets
+2025-10-08 22:21:30,533 [DEBUG] [MainThread] [systray_widget/systray.py:498]: Updating current state
+2025-10-08 22:29:55,596 [INFO] [MainThread] [root/bar_manager.py:83]: Stopping WindowsNotificationEventListener...
+2025-10-08 22:29:55,599 [INFO] [MainThread] [root/bar_manager.py:83]: Stopping SystemEventListener...
+2025-10-08 22:29:55,616 [DEBUG] [MainThread] [systray_widget/systray.py:498]: Updating current state
+2025-10-08 22:29:55,617 [DEBUG] [MainThread] [systray_widget/systray.py:516]: Saving state to disk
+2025-10-08 22:29:55,623 [DEBUG] [MainThread] [systray_widget/systray.py:520]: Saving state to C:\Users\yuzup\AppData\Local\YASB\systray_state_BOEDISPLAY1.json
+2025-10-08 22:32:37,244 [INFO] [MainThread] [root/log.py:59]: YASB v1.8.2
+2025-10-08 22:32:37,246 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-10-08 22:32:37,247 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-10-08 22:32:38,990 [DEBUG] [MainThread] [tzlocal/win32.py:55]: Looking up time zone info from registry
+2025-10-08 22:32:42,675 [ERROR] [MainThread] [root/weather.py:59]: API key or location is missing. Please provide a valid API key and location.
+2025-10-08 22:32:42,718 [DEBUG] [MainThread] [comtypes/__init__.py:149]: CoInitializeEx(None, 2)
+2025-10-08 22:32:43,789 [INFO] [MainThread] [root/bar_manager.py:76]: Starting WindowsNotificationEventListener...
+2025-10-08 22:32:43,791 [INFO] [MainThread] [root/bar_manager.py:76]: Starting SystemEventListener...
+2025-10-08 22:32:43,793 [INFO] [MainThread] [root/watcher.py:54]: Created file watcher for path C:\Users\yuzup\.config\yasb
+2025-10-08 22:32:43,841 [DEBUG] [MainThread] [qasync._windows._EventPoller/_windows.py:215]: Starting (proactor: <_IocpProactor overlapped#=0 result#=0>)...
+2025-10-08 22:32:43,844 [DEBUG] [Dummy-6] [qasync._windows._EventWorker/_windows.py:195]: Thread started
+2025-10-08 22:32:43,846 [DEBUG] [MainThread] [systray_widget/systray.py:538]: Loading state from C:\Users\yuzup\AppData\Local\YASB\systray_state_BOEDISPLAY1.json
+2025-10-08 22:32:43,859 [DEBUG] [TaskbarService] [systray_widget/systray.py:72]: TaskbarService thread is starting...
+2025-10-08 22:32:43,859 [DEBUG] [TrayMonitor] [systray_widget/systray.py:58]: Systray thread is starting...
+2025-10-08 22:32:43,867 [DEBUG] [TaskbarService] [root/tasks_service.py:75]: Found yasb systray hwnd: 67232
+2025-10-08 22:32:43,867 [DEBUG] [TaskbarService] [systray_widget/tasks_service.py:81]: Adding TaskbandHWND prop to hwnd 67232
+2025-10-08 22:32:43,946 [DEBUG] [MainThread] [systray_widget/systray.py:285]: Systray thread started
+2025-10-08 22:32:44,148 [DEBUG] [TrayMonitor] [systray_widget/tray_monitor.py:228]: Finding real tray hwnd
+2025-10-08 22:32:44,149 [DEBUG] [TaskbarService] [systray_widget/tasks_service.py:81]: Adding TaskbandHWND prop to hwnd 67232
+2025-10-08 22:32:44,151 [DEBUG] [MainThread] [systray_widget/tray_monitor.py:154]: Sending TaskbarCreated message: 49248
+2025-10-08 22:33:19,113 [INFO] [MainThread] [root/log.py:59]: YASB v1.8.2
+2025-10-08 22:33:19,114 [INFO] [Thread-1 (_run_server)] [cli_server/cli_server.py:212]: CLI server started v1.1.2
+2025-10-08 22:33:19,114 [INFO] [MainThread] [cli_server/cli_server.py:104]: Log pipe server started
+2025-10-08 22:33:19,115 [ERROR] [MainThread] [root/main.py:77]: Another instance of the YASB is already running.
+2025-10-08 22:33:26,452 [DEBUG] [MainThread] [systray_widget/systray.py:476]: Re-sorting widgets
+2025-10-08 22:33:26,457 [DEBUG] [MainThread] [systray_widget/systray.py:498]: Updating current state
+2025-10-08 22:33:51,364 [DEBUG] [MainThread] [systray_widget/systray.py:476]: Re-sorting widgets
+2025-10-08 22:33:51,364 [DEBUG] [MainThread] [systray_widget/systray.py:498]: Updating current state
+2025-10-08 22:35:26,352 [DEBUG] [MainThread] [systray_widget/systray.py:476]: Re-sorting widgets
+2025-10-08 22:35:26,353 [DEBUG] [MainThread] [systray_widget/systray.py:498]: Updating current state
+2025-10-08 22:42:14,909 [DEBUG] [MainThread] [systray_widget/systray.py:476]: Re-sorting widgets
+2025-10-08 22:42:14,909 [DEBUG] [MainThread] [systray_widget/systray.py:498]: Updating current state
+2025-10-08 23:41:46,798 [DEBUG] [MainThread] [systray_widget/systray.py:476]: Re-sorting widgets
+2025-10-08 23:41:46,801 [DEBUG] [MainThread] [systray_widget/systray.py:498]: Updating current state
+2025-10-08 23:42:41,292 [DEBUG] [MainThread] [systray_widget/systray.py:476]: Re-sorting widgets
+2025-10-08 23:42:41,293 [DEBUG] [MainThread] [systray_widget/systray.py:498]: Updating current state
+2025-10-08 23:43:40,337 [DEBUG] [MainThread] [root/volume.py:328]: Attempting PolicyConfig interface with device: {0.0.0.00000000}.{53fadc61-e546-494e-964b-1dfdad6c2938}
+2025-10-08 23:45:21,185 [DEBUG] [MainThread] [systray_widget/systray.py:476]: Re-sorting widgets
+2025-10-08 23:45:21,185 [DEBUG] [MainThread] [systray_widget/systray.py:498]: Updating current state
+2025-10-08 23:51:46,206 [DEBUG] [MainThread] [systray_widget/systray.py:476]: Re-sorting widgets
+2025-10-08 23:51:46,207 [DEBUG] [MainThread] [systray_widget/systray.py:498]: Updating current state
+2025-10-08 23:52:17,534 [DEBUG] [MainThread] [root/volume.py:328]: Attempting PolicyConfig interface with device: {0.0.0.00000000}.{1484f81a-c677-4185-8feb-51304821212a}
+2025-10-09 00:02:49,791 [DEBUG] [MainThread] [systray_widget/systray.py:476]: Re-sorting widgets
+2025-10-09 00:02:49,792 [DEBUG] [MainThread] [systray_widget/systray.py:498]: Updating current state
