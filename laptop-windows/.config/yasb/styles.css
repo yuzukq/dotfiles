@@ -17,6 +17,12 @@
     --surface0: #282936;
     --base: rgb(17, 18, 19);
     --crust: rgba(32, 32, 43, 0.8);
+    --miku-black: #252729;
+    --miku-gray: #bec8d1;
+    --miku-blue: #86cecb;
+    --miku-green: #22949a;
+    --miku-pink: #e12885;
+
 }
 
 * {
@@ -31,13 +37,13 @@
 .yasb-bar {
     padding: 0;
     margin: 0;
-    background-color: var(--crust);
+    background-color: var(--miku-black);
 }
 
 /* Global styles for ToolTip */
 .tooltip {
-    background-color: var(--base);
-    border: 1px solid var(--surface0);
+    background-color: var(--miku-black);
+    border: 1px solid var(--miku-gray);
     border-radius: 4px;
     color: var(--text);
     padding: 4px 8px 5px 8px;
@@ -55,7 +61,7 @@
 /* Global context menu style */
 .context-menu,
 .context-menu .menu-checkbox {
-    background-color: #202020;
+    background-color: var(--miku-black);
     border: none;
     padding: 4px 0px;
     font-family: 'Segoe UI';
@@ -80,18 +86,18 @@
 
 .context-menu::item:selected,
 .context-menu .menu-checkbox:hover {
-    background-color: #313131;
+    background-color: var(--miku-black);
     color: #FFFFFF;
 }
 
 .context-menu::separator {
     height: 1px;
-    background-color: #404040;
+    background-color: var(--miku-gray);
     margin: 4px 8px;
 }
 
 .context-menu::item:disabled {
-    color: #666666;
+    color: var(--miku-gray);
     background-color: transparent;
 }
 
@@ -121,7 +127,7 @@
 }
 
 .context-menu .menu-checkbox .checkbox::indicator:unchecked {
-    background: #444444;
+    background: var(--miku-gray);
     border-radius: 2px;
 }
 
@@ -149,38 +155,10 @@
 }
 
 .grouped-widgets .container {
-    background-color: var(--base);
+    background-color: var(--miku-black);
     margin: 4px 0 4px 0;
     border-radius: 12px;
-    border: 1px solid var(--surface1);
-}
-
-.komorebi-workspaces .offline-status {
-    color: var(--surface2);
-    font-size: 12px;
-    padding: 0 0 0 4px;
-    font-weight: 600;
-}
-
-.komorebi-workspaces .ws-btn {
-    border: none;
-    background-color: transparent;
-    margin: 0 3px;
-    padding: 0;
-    font-size: 14px;
-    color: var(--surface2);
-}
-
-.komorebi-workspaces .ws-btn:hover {
-    color: var(--overlay2);
-}
-
-.komorebi-workspaces .ws-btn.populated {
-    color: var(--text);
-}
-
-.komorebi-workspaces .ws-btn.active {
-    color: var(--text);
+    border: 1px solid var(--miku-gray);
 }
 
 .cpu-widget .icon {
@@ -193,7 +171,7 @@
 }
 
 .clock-widget .label {
-    color: var(--green);
+    color: var(--miku-blue);
 }
 
 .calendar {
@@ -259,7 +237,7 @@
 }
 
 .power-menu-widget .label {
-    color: var(--red);
+    color: var(--miku-pink);
     font-size: 15px;
 }
 
@@ -273,7 +251,7 @@
     height: 230px;
     border-radius: 0;
     background-color: var(--crust);
-    color: var(--green);
+    color: var(--miku-green);
     border-left: 4px solid rgba(58, 83, 80, 0);
     border-right: 4px solid rgba(58, 83, 80, 0);
     border-top: 4px solid rgba(58, 83, 80, 0);
@@ -282,41 +260,41 @@
 }
 
 .power-menu-popup .button.hover {
-    border-left: 4px solid #94e2d5;
-    border-right: 4px solid #94e2d5;
-    border-top: 4px solid #94e2d5;
-    border-bottom: 4px solid #94e2d5;
+    border-left: 4px solid var(--miku-green);
+    border-right: 4px solid var(--miku-green);
+    border-top: 4px solid var(--miku-green);
+    border-bottom: 4px solid var(--miku-green);
 }
 
 .power-menu-popup .button.cancel.hover {
-    border-left: 4px solid #e29494;
-    border-right: 4px solid #e29494;
-    border-top: 4px solid #e29494;
-    border-bottom: 4px solid #e29494;
+    border-left: 4px solid var(--miku-pink);
+    border-right: 4px solid var(--miku-pink);
+    border-top: 4px solid var(--miku-pink);
+    border-bottom: 4px solid var(--miku-pink);
 }
 
 .power-menu-popup .button .label {
     margin-bottom: 8px;
     font-size: 16px;
     font-weight: 500;
-    color: var(--green)
+    color: var(--miku-green)
 }
 
 .power-menu-popup .button .icon {
     font-size: 64px;
     padding-top: 32px;
-    color: var(--green)
+    color: var(--miku-green)
 }
 
 .power-menu-popup .button.cancel .icon,
 .power-menu-popup .button.cancel .label {
-    color: var(--red);
+    color: var(--miku-pink);
 }
 
 .uptime {
     font-size: 14px;
     margin-bottom: 10px;
-    color: var(--surface2);
+    color: var(--miku-gray);
     font-weight: 600;
 }
 
@@ -326,81 +304,7 @@
 
 .volume-widget .icon {
     font-size: 12px;
-    color: var(--green);
-}
-
-.language-widget .icon {
-    color: var(--green);
-}
-
-.language-menu {
-    background-color: var(--crust);
-    min-width: 300px;
-}
-
-.language-menu .header {
-    font-family: 'Segoe UI';
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 2px;
-    padding: 12px;
-}
-
-.language-menu .footer {
-    font-family: 'Segoe UI';
-    font-size: 12px;
-    font-weight: 600;
-    padding: 12px;
-    margin-top: 2px;
-    color: #9399b2;
-}
-
-.language-menu .footer:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
-.language-menu .language-item {
-    padding: 6px 12px;
-    margin: 2px 4px;
-}
-
-.language-menu .language-item.active {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-}
-
-.language-menu .language-item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
-.language-menu .language-item.active:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-}
-
-.language-menu .language-item .code {
-    font-weight: 900;
-    font-size: 14px;
-    min-width: 40px;
-    text-transform: uppercase;
-}
-
-.language-menu .language-item .icon {
-    font-size: 16px;
-    margin-right: 8px;
-    color: #fff;
-}
-
-.language-menu .language-item .name {
-    font-weight: 600;
-    font-family: 'Segoe UI';
-    font-size: 14px;
-}
-
-.language-menu .language-item .layout {
-    font-weight: 600;
-    font-family: 'Segoe UI';
-    font-size: 12px;
+    color: var(--miku-green);
 }
 
 .systray {
@@ -438,7 +342,7 @@
 }
 
 .home-widget .icon {
-    color: var(--lavender);
+    color: var(--miku-pink);
     font-size: 17px;
 }
 
@@ -460,17 +364,17 @@
 }
 
 .home-menu .menu-item:hover {
-    background-color: rgba(128, 130, 158, 0.15);
+    background-color: var(--miku-black);
     color: #fff;
 }
 
 .home-menu .separator {
     max-height: 1px;
-    background-color: rgba(128, 130, 158, 0.3);
+    background-color: var(--miku-gray);
 }
 
 .notification-widget .icon.new-notification {
-    color: var(--blue);
+    color: var(--miku-blue);
 }
 
 .media-menu {
@@ -490,37 +394,37 @@
 
 .media-menu .artist {
     font-size: 13px;
-    color: #6c7086;
+    color: var(--miku-gray);
     margin-top: 0px;
     margin-bottom: 8px;
 }
 
 .media-menu .source {
     font-size: 11px;
-    color: #000;
+    color: var(--miku-black);
     font-weight: normal;
     border-radius: 3px;
-    background-color: #bac2de;
+    background-color: var(--miku-gray);
     padding: 2px 4px;
 }
 
 .media-menu .source.firefox {
-    background-color: #ff583b;
+    background-color: var(--miku-pink);
     color: #ffffff;
 }
 
 .media-menu .source.spotify {
-    background-color: #199143;
+    background-color: var(--miku-green);
     color: #ffffff;
 }
 
 .media-menu .source.edge {
-    background-color: #0078d4;
+    background-color: var(--miku-blue);
     color: #ffffff;
 }
 
 .media-menu .source.windows-media {
-    background-color: #0078d4;
+    background-color: var(--miku-blue);
     color: #ffffff;
 }
 
@@ -546,7 +450,7 @@
 }
 
 .media-menu .btn.play {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--miku-gray);
     font-size: 20px
 }
 
@@ -586,69 +490,9 @@
 }
 
 .media-menu .progress-slider::sub-page {
-    background: var(--blue);
+    background: var(--miku-blue);
     border-radius: 3px;
     height: 4px;
-}
-
-.weather-widget .icon {
-    font-size: 14px;
-    color: var(--yellow);
-}
-
-.weather-card {
-    background-color: var(--crust);
-}
-
-.weather-card-today .label {
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.weather-card-today .label.location {
-    font-size: 32px;
-    font-weight: 600;
-}
-
-.weather-card-today .label.alert {
-    font-size: 13px;
-    font-weight: 600;
-    background-color: rgba(247, 175, 42, 0.05);
-    border: 1px solid rgba(247, 209, 42, 0.1);
-    color: rgba(196, 181, 162, 0.85);
-    border-radius: 6px;
-    padding: 5px 0;
-}
-
-.weather-card-day {
-    border-radius: 6px;
-    background-color: var(--crust)
-}
-
-.weather-card-day .label {
-    font-size: 13px;
-
-}
-
-.weather-card-day.active {
-    background-color: rgba(40, 40, 60, 0.6);
-    border: 1px solid rgba(50, 50, 75, 1);
-}
-
-.weather-card-day:hover {
-    background-color: rgba(40, 40, 60, 0.6);
-}
-
-.weather-card .hourly-container {
-    border: none;
-    background-color: rgba(40, 40, 60, 0.0);
-    min-height: 150px;
-}
-
-.weather-card .hourly-data {
-    background-color: #FAE93F;
-    font-size: 11px;
-    font-weight: bold;
 }
 
 /* Widget style */
@@ -660,12 +504,12 @@
 
 .launchpad-widget .icon {
     font-size: 16px;
-    color: #89b4fa;
+    color: var(--miku-blue);
 }
 
 /* Launchpad context menu style */
 .launchpad .context-menu {
-    background-color: #202020;
+    background-color: var(--miku-black);
     border: none;
     border-radius: 6px;
     padding: 4px 0px;
@@ -903,7 +747,7 @@
 
 /* App icon .launchpad .app-icon or URL icon .launchpad .app-icon.url */
 .launchpad .app-icon.url .title {
-    color: #52f1d2;
+    color: var(--miku-green);
 }
 
 .launchpad .app-icon .icon {
@@ -979,7 +823,7 @@
 }
 .pomodoro-widget .label.work,
 .pomodoro-widget .icon.work {
-    color: #8bc3ff;
+    color: var(--miku-pink);
 }
 .pomodoro-widget .label.break,
 .pomodoro-widget .icon.break {
