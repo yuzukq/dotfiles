@@ -1,6 +1,6 @@
 oh-my-posh init pwsh | Invoke-Expression
 
-Get-Content ".\shell_ascii_art.txt" | ForEach-Object {
+Get-Content "C:\Users\yuzup\Documents\shell_ascii_art.txt" | ForEach-Object {
     Write-Host $_ -ForegroundColor Cyan
 }
 
