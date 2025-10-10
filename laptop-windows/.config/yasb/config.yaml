@@ -2,10 +2,6 @@ watch_stylesheet: true
 watch_config: true
 debug: false
 update_check: true
-komorebi:
-  start_command: "komorebic start --whkd"
-  stop_command: "komorebic stop --whkd"
-  reload_command: "komorebic stop --whkd && komorebic start --whkd"
 bars:
   primary-bar:
     enabled: true
@@ -398,31 +394,6 @@ widgets:
 
       # populated_label: "{name} {display_name} \uebb4"
       # empty_label: "{name} {display_name} \uebb5"
-  taskbar:
-    type: "yasb.taskbar.TaskbarWidget"
-    options:
-      icon_size: 16
-      tooltip: true
-      show_only_visible: false
-      strict_filtering: true
-      monitor_exclusive: false
-      animation:
-        enabled: true
-      preview:
-        enabled: false
-        width: 240
-        delay: 400
-        padding: 8
-        margin: 8
-      title_label:
-        enabled: false
-        show: "always"
-        min_length: 10
-        max_length: 30
-      ignore_apps:
-        processes: []
-        titles: []
-        classes: []
   launchpad:
     type: "yasb.launchpad.LaunchpadWidget"
     options:
