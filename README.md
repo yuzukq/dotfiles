@@ -1,4 +1,7 @@
 # Development-Environment-Configuration
+### (10/31新着)
+win laptopで使用しているセットアップについて書きました...!
+https://www.yuzu621.tech/blog/windows-rice
 ```bash
   ████████   ████████     ██████   ██████  ███  █████                   
  ███▒▒▒▒███ ███▒▒▒▒███   ▒▒██████ ██████  ▒▒▒  ▒▒███                    
