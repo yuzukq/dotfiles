@@ -42,6 +42,7 @@ bars:
       center:
       - "clock"
       - "pomodoro"
+      - "notes" # メモウィジェットを中央に配置
       right:
       - "systray"
       - "grouped_widgets"
@@ -51,6 +52,35 @@ bars:
       - "battery"
       - "power_menu"
 widgets:
+  notes:
+    type: "yasb.notes.NotesWidget"
+    options:
+      label: "<span>\udb82\udd0c</span> {count}"
+      label_alt: "{count} notes"
+      menu:
+        blur: true # ポップアップメニューにブラー効果を適用
+        round_corners: true # メニューの角を丸くする
+        round_corners_type: "normal" # 角の丸みのタイプ（normal, small)
+        border_color: "System" # メニューの境界線の色(テーマ)
+        alignment: "right" # ウィジェットに対するメニューの配置(left, center, right)
+        direction: "down" # メニューの表示方向(up, down)
+        offset_top: 6 # メニューの上方向へのオフセット
+        offset_left: 0 # メニューの左方向へのオフセット
+        max_title_size: 150 # メモのタイトルの切り捨て文字の上限
+        show_date_time: true # メモの作成日時を表示
+      icons:
+        note: "\udb82\udd0c"
+        delete: "\ueab8"
+        copy: "\uebcc"
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
   media:
     type: "yasb.media.MediaWidget"
     options:

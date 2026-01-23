@@ -37,7 +37,17 @@
 .yasb-bar {
     padding: 0;
     margin: 0;
+    background-color: transparent;
+}
+
+/* Split bar into three separate sections (islands) */
+.container-left,
+.container-center,
+.container-right {
     background-color: var(--miku-black);
+    border-radius: 12px;
+    padding: 0 8px;
+    margin: 0 4px;
 }
 
 /* Global styles for ToolTip */
@@ -813,42 +823,51 @@
 .pomodoro-widget {
     padding: 0 6px 0 6px;
 }
+
 .pomodoro-widget .icon {
     font-size: 12px;
     padding-right: 4px;
 }
+
 .pomodoro-widget .label.paused,
 .pomodoro-widget .icon.paused {
     color: #7d7e8b;
 }
+
 .pomodoro-widget .label.work,
 .pomodoro-widget .icon.work {
     color: var(--miku-pink);
 }
+
 .pomodoro-widget .label.break,
 .pomodoro-widget .icon.break {
     color: #89b4fa;
 }
+
 /* Pomodoro menu styling */
 .pomodoro-menu {
     background-color: rgba(17, 17, 27, 0.2);
     border-radius: 8px;
 }
+
 .pomodoro-menu .header {
     font-size: 16px;
     font-weight: 600;
     max-height: 0px;
     color: #ffffff;
 }
+
 .pomodoro-menu .status {
     font-size: 18px;
     font-weight: 600;
     color: #cdd6f4;
 }
+
 .pomodoro-menu .session {
     font-size: 12px;
     color: #a6adc8;
 }
+
 .pomodoro-menu .button {
     background-color: #3f4053;
     color: #cdd6f4;
@@ -856,19 +875,24 @@
     border-radius: 4px;
     padding: 6px 12px;
 }
+
 .pomodoro-menu .button.start {
     background-color: #3f4053;
 }
+
 .pomodoro-menu .button.reset {
     background-color: #3f4053;
 }
+
 .pomodoro-menu .button:hover {
     background-color: rgba(255, 255, 255, 0.158);
 }
+
 .pomodoro-menu .button.pause {
     background-color: #68b6ff;
     color: #1e1e2e;
 }
+
 .pomodoro-menu .button:pressed {
     background-color: #5a5b6e;
 }
