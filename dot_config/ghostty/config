@@ -1,0 +1,77 @@
+# --- 見た目・フォント ---
+font-size = 16
+adjust-cell-height = 10%
+# フォントファミリー 
+font-family = Maple Fonts Noto NF
+font-style = Bold
+
+# テーマ
+theme = Material Design Colors
+
+# 装飾
+# 赤系のアクセントカラー
+palette = 1=#ff5555
+palette = 9=#ff6e67
+
+# ピンク/赤系の強調色
+palette = 5=#ff79c6
+palette = 13=#ff92d0
+
+# ウィンドウの装飾
+window-decoration = true
+macos-titlebar-style = transparent
+
+# アニメーション
+quick-terminal-animation-duration = 0.3
+
+# --- ウィンドウ・透明度 ---
+# 背景を透過させてブラー（すりガラス効果）を入れる
+background-opacity = 0.90
+background-blur-radius = 20
+
+# ウィンドウ内の余白を入れて圧迫感を減らす
+window-padding-x = 14
+window-padding-y = 14
+window-padding-balance = true
+
+# --- Macネイティブな挙動 ---
+# タイトルバーを透明にしてスッキリさせる
+macos-titlebar-style = transparent
+# フルスクリーン時にMac標準の挙動にする
+macos-window-shadow = true
+# 入力中はマウスカーソルを隠す
+mouse-hide-while-typing = true
+
+# --- 操作性 ---
+# 選択しただけでクリップボードにコピー
+copy-on-select = true
+# クリップボードの読み書きを許可
+clipboard-read = allow
+clipboard-write = allow
+
+# --- キーバインド設定（画面分割） ---
+#  Cmd+Enter で「下に」分割
+keybind = cmd+enter=new_split:down
+# Cmd+Shift+Enter で「右に」分割
+keybind = cmd+shift+enter=new_split:right
+# Cmd + 矢印キー で分割した画面を「移動」
+keybind = cmd+left=goto_split:left
+keybind = cmd+right=goto_split:right
+keybind = cmd+up=goto_split:top
+keybind = cmd+down=goto_split:bottom
+# Cmd + Shift + 矢印キー でサイズを「調整」
+keybind = cmd+shift+left=resize_split:left,20
+keybind = cmd+shift+right=resize_split:right,20
+keybind = cmd+shift+up=resize_split:up,20
+keybind = cmd+shift+down=resize_split:down,20
+
+# Cmd + W で現在の「ペイン（分割）」を閉じる
+keybind = cmd+w=close_surface
+
+# --- カーソルシェーダー（初音ミクテーマ） ---
+# ミクカラーのデジタル残像トレイル（カーソル移動時）
+custom-shader = shaders/miku_cursor_trail.glsl
+# ミクカラーのデジタルパルス波紋（insert/normalモード切替時）
+custom-shader = shaders/miku_digital_ripple.glsl
+# フォーカスが外れてもアニメーションを継続
+custom-shader-animation = always
