@@ -1,7 +1,11 @@
 # --- 見た目・フォント ---
+{{- if eq .chezmoi.os "darwin" }}
 font-size = 16
+{{- else }}
+font-size = 14
+{{- end }}
 adjust-cell-height = 10%
-# フォントファミリー 
+# フォントファミリー
 font-family = Maple Fonts Noto NF
 font-style = Bold
 
@@ -19,7 +23,6 @@ palette = 13=#ff92d0
 
 # ウィンドウの装飾
 window-decoration = true
-macos-titlebar-style = transparent
 
 # アニメーション
 quick-terminal-animation-duration = 0.3
@@ -34,14 +37,13 @@ window-padding-x = 14
 window-padding-y = 14
 window-padding-balance = true
 
-# --- Macネイティブな挙動 ---
-# タイトルバーを透明にしてスッキリさせる
-macos-titlebar-style = transparent
-# フルスクリーン時にMac標準の挙動にする
-macos-window-shadow = true
 # 入力中はマウスカーソルを隠す
 mouse-hide-while-typing = true
-
+{{ if eq .chezmoi.os "darwin" }}
+# --- Macネイティブな挙動 ---
+macos-titlebar-style = transparent
+macos-window-shadow = true
+{{ end }}
 # --- 操作性 ---
 # 選択しただけでクリップボードにコピー
 copy-on-select = true
@@ -50,23 +52,27 @@ clipboard-read = allow
 clipboard-write = allow
 
 # --- キーバインド設定（画面分割） ---
-#  Cmd+Enter で「下に」分割
-keybind = cmd+enter=new_split:down
-# Cmd+Shift+Enter で「右に」分割
-keybind = cmd+shift+enter=new_split:right
-# Cmd + 矢印キー で分割した画面を「移動」
-keybind = cmd+left=goto_split:left
-keybind = cmd+right=goto_split:right
-keybind = cmd+up=goto_split:top
-keybind = cmd+down=goto_split:bottom
-# Cmd + Shift + 矢印キー でサイズを「調整」
-keybind = cmd+shift+left=resize_split:left,20
-keybind = cmd+shift+right=resize_split:right,20
-keybind = cmd+shift+up=resize_split:up,20
-keybind = cmd+shift+down=resize_split:down,20
+{{- $mod := "ctrl" }}
+{{- if eq .chezmoi.os "darwin" }}
+{{- $mod = "cmd" }}
+{{- end }}
+# {{ $mod }}+Enter で「下に」分割
+keybind = {{ $mod }}+enter=new_split:down
+# {{ $mod }}+Shift+Enter で「右に」分割
+keybind = {{ $mod }}+shift+enter=new_split:right
+# {{ $mod }} + 矢印キー で分割した画面を「移動」
+keybind = {{ $mod }}+left=goto_split:left
+keybind = {{ $mod }}+right=goto_split:right
+keybind = {{ $mod }}+up=goto_split:top
+keybind = {{ $mod }}+down=goto_split:bottom
+# {{ $mod }} + Shift + 矢印キー でサイズを「調整」
+keybind = {{ $mod }}+shift+left=resize_split:left,20
+keybind = {{ $mod }}+shift+right=resize_split:right,20
+keybind = {{ $mod }}+shift+up=resize_split:up,20
+keybind = {{ $mod }}+shift+down=resize_split:down,20
 
-# Cmd + W で現在の「ペイン（分割）」を閉じる
-keybind = cmd+w=close_surface
+# {{ $mod }} + W で現在の「ペイン（分割）」を閉じる
+keybind = {{ $mod }}+w=close_surface
 
 # --- カーソルシェーダー（初音ミクテーマ） ---
 # ミクカラーのデジタル残像トレイル（カーソル移動時）
