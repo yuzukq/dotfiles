@@ -1,0 +1,31 @@
+layout {
+    // 上部のタブバーや下部のステータスバーなど
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="Development" {
+        pane split_direction="vertical" {
+            // 左側：main
+            pane size="55%" {
+                focus true
+            }
+            pane split_direction="horizontal" {
+                // 右上：Claud code
+                pane size="70%" {
+                    name "Claude Code"
+                }
+                // 右下：雑多
+                pane {
+                    name "Utils"
+                }
+            }
+        }
+    }
+}
