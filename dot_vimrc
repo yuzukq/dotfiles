@@ -1,0 +1,30 @@
+" シンタックスハイライトを有効化
+syntax on
+
+" ファイルタイプの検出とプラグイン、インデントを有効化
+filetype plugin indent on
+
+" カラースキームを設定（お好みで変更可能）
+" colorscheme desert
+
+" 行番号を表示
+set number
+
+" 検索時のハイライト
+set hlsearch
+
+" インクリメンタルサーチ
+set incsearch
+
+" タブ文字を可視化
+set list
+set listchars=tab:»-,trail:-,nbsp:%
+
+" 自動インデント
+set autoindent
+set smartindent
+
+" タブ幅の設定
+set tabstop=4
+set shiftwidth=4
+set expandtab
