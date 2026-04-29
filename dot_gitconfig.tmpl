@@ -1,6 +1,6 @@
 [user]
-	name = {{ .git_name }}
-	email = {{ .git_email }}
+	name = {{ .git_name | default "Your Name" }}
+	email = {{ .git_email | default "your@email.com" }}
 
 [alias]
 	co = checkout
