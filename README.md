@@ -28,7 +28,12 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install chezmoi
 ```
 
-### 3. chezmoi の設定ファイルを作成
+### 3. dotfiles を clone
+```bash
+git clone https://github.com/yuzukq/dotfiles ~/dotfiles
+```
+
+### 4. chezmoi の設定ファイルを作成
 git の名前・メールアドレスを設定する（リポジトリには含まれないためここで指定する）。
 ```bash
 mkdir -p ~/.config/chezmoi
@@ -41,19 +46,19 @@ sourceDir = "~/dotfiles"
 EOF
 ```
 
-### 4. dotfiles を適用
+### 5. dotfiles を適用
 ```bash
-chezmoi init --apply <github-username>/dotfiles
+chezmoi apply
 ```
 
 ツール類（fish, fzf, bat, ripgrep, ghostty, zellij, karabiner-elements など）が自動でインストールされる。
 
-### 5. Raycast の設定を復元
+### 6. Raycast の設定を復元
 1. Raycast を起動
 2. Settings → Import から `dotfiles/raycast/` 内の `.rayconfig` ファイルを選択
 3. パスワードを入力（パスワードマネージャーで管理）
 
-### 6. システム設定
+### 7. システム設定
 
 **Karabiner-Elements**
 - アクセシビリティの許可を付与
