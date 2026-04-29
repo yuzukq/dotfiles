@@ -1,0 +1,44 @@
+#!/bin/bash
+{{ if ne .chezmoi.os "darwin" }}exit 0{{ end }}
+
+set -e
+
+# Homebrew
+if ! command -v brew &>/dev/null; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# Formulae
+brew install \
+  bat \
+  chezmoi \
+  fastfetch \
+  fd \
+  fish \
+  fnm \
+  fzf \
+  gh \
+  lazygit \
+  neovim \
+  ripgrep \
+  tree-sitter \
+  zellij
+
+# Casks
+brew install --cask \
+  alt-tab \
+  font-maple-mono-nf \
+  ghostty \
+  karabiner-elements \
+  orbstack \
+  raycast \
+  scroll-reverser
+
+# Default shell を fish に変更
+if ! grep -q "$(brew --prefix)/bin/fish" /etc/shells; then
+  echo "$(brew --prefix)/bin/fish" | sudo tee -a /etc/shells
+fi
+if [ "$SHELL" != "$(brew --prefix)/bin/fish" ]; then
+  chsh -s "$(brew --prefix)/bin/fish"
+fi

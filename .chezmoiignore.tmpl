@@ -3,12 +3,3 @@
 .config/ghostty/shaders/.gitignore
 
 README.md
-
-{{ if eq .chezmoi.os "darwin" }}
-# Linux専用（Macでは無視）
-{{ end }}
-
-{{ if eq .chezmoi.os "linux" }}
-# Mac専用（Linuxでは無視）
-.config/karabiner
-{{ end }}
