@@ -4,7 +4,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Right Option to Hyper Key (Cmd+Ctrl+Opt+Shift)",
+                        "description": "Right Option to Hyper Key (Cmd+Ctrl+Opt)",
                         "manipulators": [
                             {
                                 "description": "Right Option to Hyper Key",
@@ -15,7 +15,7 @@
                                 "to": [
                                     {
                                         "key_code": "left_command",
-                                        "modifiers": ["left_control", "left_option", "left_shift"]
+                                        "modifiers": ["left_control", "left_option"]
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "right_option" }],
@@ -24,7 +24,7 @@
                         ]
                     },
                     {
-                        "description": "Yuzu's Navigation Rules: Right-Cmd + WASD/ER",
+                        "description": "Yuzu's Navigation Rules: Right-Cmd + WASD/ER/Delete",
                         "manipulators": [
                             {
                                 "description": "Right Command + W to Up",
@@ -106,6 +106,12 @@
                                         "modifiers": ["left_control"]
                                     }
                                 ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Right Command + Delete to Forward Delete",
+                                "from": { "key_code": "delete_or_backspace", "modifiers": { "mandatory": ["right_command"], "optional": ["any"] } },
+                                "to": [{ "key_code": "delete_forward" }],
                                 "type": "basic"
                             }
                         ]
