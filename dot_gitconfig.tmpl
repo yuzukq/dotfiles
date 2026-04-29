@@ -1,0 +1,20 @@
+[user]
+	name = {{ .git_name }}
+	email = {{ .git_email }}
+
+[alias]
+	co = checkout
+	un = reset HEAD --
+	undo = reset HEAD^
+	ac = !git add . && git commit -m
+	cm = commit --amend -m
+	lg = log --oneline -5
+	z = stash
+	s = stash
+	d = diff
+	b = branch
+	c = commit
+	m = merge
+	p = push
+	f = fetch
+	sw = switch
