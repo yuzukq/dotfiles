@@ -4,6 +4,8 @@ end
 
 {{ if eq .chezmoi.os "darwin" -}}
 fish_add_path /opt/homebrew/bin
+fish_add_path ~/.bun/bin
+set -gx CHROME_PATH "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 fnm env --use-on-cd | source
 
 # Added by OrbStack: command-line tools and integration
