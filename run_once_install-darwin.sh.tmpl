@@ -26,6 +26,12 @@ brew install --cask \
   raycast \
   scroll-reverser
 
+# Claude Code
+eval "$(fnm env)"
+fnm install --lts
+fnm use lts-latest
+npm install -g @anthropic-ai/claude-code
+
 # Default shell を fish に変更
 if ! grep -q "$(brew --prefix)/bin/fish" /etc/shells; then
   echo "$(brew --prefix)/bin/fish" | sudo tee -a /etc/shells
