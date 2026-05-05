@@ -4,10 +4,10 @@ SOUND_DIR="$HOME/.claude/sounds"
 
 case "$1" in
   notification)
-    SOUND_FILE="$SOUND_DIR/notice.wav"
+    SOUND_FILE="$SOUND_DIR/check.mp3"
     ;;
   stop|*)
-    SOUND_FILE="$SOUND_DIR/fin.wav"
+    SOUND_FILE="$SOUND_DIR/done.mp3"
     ;;
 esac
 
