@@ -1,6 +1,4 @@
 # Development-Environment-Configuration
-各OSでのセットアップスクリプト準備中。
-
 ```bash
   ████████   ████████     ██████   ██████  ███  █████                   
  ███▒▒▒▒███ ███▒▒▒▒███   ▒▒██████ ██████  ▒▒▒  ▒▒███                    
@@ -11,19 +9,17 @@
 ▒▒████████ ▒▒████████     █████     █████ █████ ████ █████ ▒▒████████   
  ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒     ▒▒▒▒▒     ▒▒▒▒▒ ▒▒▒▒▒ ▒▒▒▒ ▒▒▒▒▒   ▒▒▒▒▒▒▒▒                                                                                                       
 ```
-2026年1月初頭時点での開発環境は[ここ](https://www.yuzu621.tech/blog/devenv2026)。
-
 ---
 
 ## Mac セットアップ手順
 
-### 1. Homebrew をインストール
+### 1. Homebrew
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-### 2. chezmoi をインストール
+### 2. chezmoi
 ```bash
 brew install chezmoi
 ```
