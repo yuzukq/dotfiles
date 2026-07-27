@@ -1,0 +1,49 @@
+# 全項目のデフォルトとコメント一覧は `herdr --default-config` で確認可能。
+# 編集後は `herdr config check` で検証、起動中サーバーへは
+# `herdr server reload-config` （または prefix+shift+r）で反映される。
+
+onboarding = false  # zellij の show_startup_tips false 相当
+
+[theme]
+name = "gruvbox"
+
+auto_switch = false
+
+[theme.custom]
+accent = "#39C5BB"
+blue = "#33CCCC"
+red = "#FF66B2"
+green = "#3ebca4"
+yellow = "#F0DFAF"
+panel_bg = "#1e1e1e"
+
+[keys]
+prefix = "ctrl+b"
+
+focus_pane_left = ["prefix+h", "prefix+Left"]
+focus_pane_down = ["prefix+j", "prefix+Down"]
+focus_pane_up = ["prefix+k", "prefix+Up"]
+focus_pane_right = ["prefix+l", "prefix+Right"]
+
+detach = "prefix+d"
+
+# メモ
+# split はデフォルトの prefix+v（縦線区切り=左右）/ prefix+minus（横線区切り=上下）
+#   new_tab                = "prefix+c"        … zellij tmux mode の c (NewTab)
+#   previous_tab/next_tab  = "prefix+p"/"prefix+n" … 同じく p/n
+#   close_pane             = "prefix+x"        … 同じく x (CloseFocus)
+#   zoom                   = "prefix+z"        … 同じく z (ToggleFocusFullscreen)
+#   edit_scrollback        = "prefix+e"        … zellij scroll mode の e
+
+[ui]
+accent = "#39C5BB"
+pane_borders = true
+
+[ui.sound]
+# 現状 Claude Code の hook で選択肢/完了のサウンドを鳴らしているため無効化。
+# 今後 codex 等マルチエージェント運用に切り替えたら herdr 側 (done_path/request_path) に一本化する。
+enabled = false
+
+[experimental]
+# prefix (Ctrl+b) 入力時、日本語IMEが有効でもコマンドが通るように一時的にASCIIキーボードへ切り替える
+switch_ascii_input_source_in_prefix = true
