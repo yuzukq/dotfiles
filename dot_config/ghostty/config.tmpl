@@ -89,6 +89,10 @@ keybind = {{ $mod }}+]=unbind
 keybind = {{ $mod }}+shift+[=unbind
 keybind = {{ $mod }}+shift+]=unbind
 
+# herdr の新規タブ (cmd+n) に渡すため、Ghostty 標準の new_window を解除
+# （cmd+shift+n は Ghostty 側で未割り当てのため対応不要）
+keybind = {{ $mod }}+n=unbind
+
 # --- カーソルシェーダー ---
 # カーソル移動時
 custom-shader = shaders/miku_cursor_trail.glsl

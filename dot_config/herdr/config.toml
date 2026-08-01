@@ -30,10 +30,13 @@ detach = "prefix+d"
 # prefix を経由しない直接ショートカット
 # cmd+[ / cmd+] : 現在のワークスペース内でタブ移動
 # cmd+shift+[ / cmd+shift+] : ワークスペース移動
+# cmd+n : 新規タブ作成 / cmd+shift+n : 新規ワークスペース作成
 previous_tab = ["prefix+p", "cmd+["]
 next_tab = ["prefix+n", "cmd+]"]
 previous_workspace = "cmd+shift+["
 next_workspace = "cmd+shift+]"
+new_tab = ["prefix+c", "cmd+n"]
+new_workspace = ["prefix+shift+n", "cmd+shift+n"]
 
 # メモ
 # split はデフォルトの prefix+v（縦線区切り=左右）/ prefix+minus（横線区切り=上下）
