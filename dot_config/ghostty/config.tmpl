@@ -28,11 +28,16 @@ window-decoration = true
 quick-terminal-animation-duration = 0.3
 
 # --- ウィンドウ・透明度 ---
-# 背景を透過させてブラー（すりガラス効果）を入れる
-background-opacity = 0.90
+# ウィンドウ透過とブラー
+# background-opacity = 0.85
 background-blur-radius = 20
 
-# ウィンドウ内の余白を入れて圧迫感を減らす
+# 背景画像(ローカルフォルダなので環境が変わったら手動で変更すること)
+background-image = /Users/yuzu/Pictures/wallpaper/miku5.jpg
+background-image-opacity = 0.1
+background-image-fit = cover
+
+# ウィンドウ内の余白
 window-padding-x = 14
 window-padding-y = 14
 window-padding-balance = true
@@ -56,30 +61,38 @@ clipboard-write = allow
 {{- if eq .chezmoi.os "darwin" }}
 {{- $mod = "cmd" }}
 {{- end }}
+# マルチプレクサ側でペイン分割するのでコメントアウト
 # {{ $mod }}+Enter で「下に」分割
-keybind = {{ $mod }}+enter=new_split:down
+# keybind = {{ $mod }}+enter=new_split:down
 # {{ $mod }}+Shift+Enter で「右に」分割
-keybind = {{ $mod }}+shift+enter=new_split:right
+# keybind = {{ $mod }}+shift+enter=new_split:right
 # {{ $mod }} + 矢印キー で分割した画面を「移動」
-keybind = {{ $mod }}+left=goto_split:left
-keybind = {{ $mod }}+right=goto_split:right
-keybind = {{ $mod }}+up=goto_split:top
-keybind = {{ $mod }}+down=goto_split:bottom
+# keybind = {{ $mod }}+left=goto_split:left
+# keybind = {{ $mod }}+right=goto_split:right
+# keybind = {{ $mod }}+up=goto_split:top
+# keybind = {{ $mod }}+down=goto_split:bottom
 # {{ $mod }} + Shift + 矢印キー でサイズを「調整」
-keybind = {{ $mod }}+shift+left=resize_split:left,20
-keybind = {{ $mod }}+shift+right=resize_split:right,20
-keybind = {{ $mod }}+shift+up=resize_split:up,20
-keybind = {{ $mod }}+shift+down=resize_split:down,20
+# keybind = {{ $mod }}+shift+left=resize_split:left,20
+# keybind = {{ $mod }}+shift+right=resize_split:right,20
+# keybind = {{ $mod }}+shift+up=resize_split:up,20
+# keybind = {{ $mod }}+shift+down=resize_split:down,20
 
 # {{ $mod }} + W で現在の「ペイン（分割）」を閉じる
 keybind = {{ $mod }}+w=close_surface
 # {{ $mod }} + Shift + W でウィンドウを閉じる
 keybind = {{ $mod }}+shift+w=close_window
 
-# --- カーソルシェーダー（初音ミクテーマ） ---
-# ミクカラーのデジタル残像トレイル（カーソル移動時）
+# herdr にタブ/ワークスペース切り替えを渡すため、Ghostty 標準の
+# goto_split / native tab 切り替えバインドを解除してキーを通過させる
+keybind = {{ $mod }}+[=unbind
+keybind = {{ $mod }}+]=unbind
+keybind = {{ $mod }}+shift+[=unbind
+keybind = {{ $mod }}+shift+]=unbind
+
+# --- カーソルシェーダー ---
+# カーソル移動時
 custom-shader = shaders/miku_cursor_trail.glsl
-# ミクカラーのデジタルパルス波紋（insert/normalモード切替時）
+# insert/normalモード切替時
 custom-shader = shaders/miku_digital_ripple.glsl
 # フォーカスが外れてもアニメーションを継続
 custom-shader-animation = always

@@ -27,10 +27,17 @@ focus_pane_right = ["prefix+l", "prefix+Right"]
 
 detach = "prefix+d"
 
+# prefix を経由しない直接ショートカット
+# cmd+[ / cmd+] : 現在のワークスペース内でタブ移動
+# cmd+shift+[ / cmd+shift+] : ワークスペース移動
+previous_tab = ["prefix+p", "cmd+["]
+next_tab = ["prefix+n", "cmd+]"]
+previous_workspace = "cmd+shift+["
+next_workspace = "cmd+shift+]"
+
 # メモ
 # split はデフォルトの prefix+v（縦線区切り=左右）/ prefix+minus（横線区切り=上下）
 #   new_tab                = "prefix+c"        … zellij tmux mode の c (NewTab)
-#   previous_tab/next_tab  = "prefix+p"/"prefix+n" … 同じく p/n
 #   close_pane             = "prefix+x"        … 同じく x (CloseFocus)
 #   zoom                   = "prefix+z"        … 同じく z (ToggleFocusFullscreen)
 #   edit_scrollback        = "prefix+e"        … zellij scroll mode の e
