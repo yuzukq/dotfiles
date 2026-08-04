@@ -1,0 +1,80 @@
+// Zed キーマップ
+//
+// キーバインドの設定方法については Zed のドキュメントを参照:
+// https://zed.dev/docs/key-bindings
+//
+// デフォルトのキーバインド一覧は、コマンドパレットから
+// `zed: open default keymap` を実行すると確認できる
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    },
+  },
+  {
+    "context": "ProjectSearchBar",
+    "unbind": {
+      "cmd-shift-j": "project_search::ToggleFilters"
+    }
+  },
+  {
+    "context": "ProjectSearchView",
+    "unbind": {
+      "cmd-shift-j": "project_search::ToggleFilters"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-j": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "alt-cmd-b": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-alt-cmd-o": "projects::OpenRecent"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-r": "projects::OpenRecent"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-alt-cmd-[": "editor::MoveToPreviousCommentParagraph"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-alt-cmd-]": "editor::MoveToNextCommentParagraph"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      // centered_layout の設定に基づき、エディタを中央寄せするモードをON/OFF
+      "ctrl-alt-cmd-c": "workspace::ToggleCenteredLayout",
+      // 集中モード(Zen): 1ファイルに集中したいときに、
+      // 全ドックの表示/非表示(workspace::ToggleAllDocks)と
+      // centered_layout のON/OFFをまとめて切り替える。
+      // ドックは直前の開閉状態を覚えているので、もう一度押せば
+      // ドックが元通り開き、centered_layoutもOFFに戻る(比較モード)。
+      "ctrl-alt-cmd-z": ["workspace::SendKeystrokes", "alt-cmd-y ctrl-alt-cmd-c"]
+    }
+  }
+]

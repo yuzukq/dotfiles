@@ -1,0 +1,62 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "centered_layout": {
+    "left_padding": 0.2,
+    "right_padding": 0.2,
+  },
+  "file_types": {
+    "XML": ["svg"],
+  },
+  "cli_default_open_behavior": "existing_window",
+  "git_panel": {
+    "dock": "right",
+    "tree_view": true,
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry",
+    },
+    "github-copilot-cli": {
+      "type": "registry",
+    },
+  },
+  "buffer_font_weight": 600.0,
+  "buffer_font_family": "Maple Mono",
+  "ui_font_family": "Maple Mono",
+  "ui_font_weight": 900.0,
+  "terminal": {
+    "dock": "bottom",
+    "font_weight": 500.0,
+    "font_size": 16.0,
+  },
+  "icon_theme": "Material Icon Theme",
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "project_panel": {
+    "auto_fold_dirs": false,
+    "dock": "left",
+  },
+  "ui_font_size": 17.0,
+  "buffer_font_size": 16.0,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Resonance with Hatsune Miku",
+  },
+  "git": {
+      "inline_blame": {
+        "enabled": true,
+        "location": "status_bar"
+      }
+  },
+}

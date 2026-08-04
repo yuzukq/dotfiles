@@ -2,12 +2,18 @@
 .config/ghostty/shaders/.git
 .config/ghostty/shaders/.gitignore
 
-# (config.toml だけを chezmoi add で個別管理している)
+# config.toml だけを chezmoi add で個別管理する
 .config/herdr/session.json
 .config/herdr/*.log
 .config/herdr/*.sock
 .config/herdr/.plugins.lock
 
+# keymap.json と settings.json のみ chezmoi add で管理する方針)
+.config/zed/prompts
+.config/zed/themes
+.config/zed/.claude
+
+# 以下macのセットアップで利用していないが，個別で利用するためリポジトリに含めているファイルたち
 README.md
 hardware
 raycast
