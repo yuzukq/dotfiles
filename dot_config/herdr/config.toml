@@ -48,7 +48,8 @@ new_workspace = ["prefix+shift+n", "cmd+shift+n"]
 [ui]
 accent = "#39C5BB"
 pane_borders = true
-
+mouse_scroll_lines = 1  # デフォルト3
+agent_panel_sort = "spaces"
 [ui.sound]
 # 現状 Claude Code の hook で選択肢/完了のサウンドを鳴らしているため無効化。
 # 今後 codex 等マルチエージェント運用に切り替えたら herdr 側 (done_path/request_path) に一本化する。
