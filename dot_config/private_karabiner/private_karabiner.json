@@ -16,7 +16,13 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Left Command to Hyper Key",
+                                "description": "Left Command to Hyper Key (Built-in Keyboard Only)",
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "identifiers": [{ "is_built_in_keyboard": true }]
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "left_command",
                                     "modifiers": { "optional": ["any"] }
