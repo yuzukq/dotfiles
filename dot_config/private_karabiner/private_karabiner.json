@@ -4,12 +4,21 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Right Option to Hyper Key (Cmd+Ctrl+Opt)",
+                        "description": "Caps Lock -> Left Command, Left Command -> Hyper Key (Cmd+Ctrl+Opt)",
                         "manipulators": [
                             {
-                                "description": "Right Option to Hyper Key",
+                                "description": "Caps Lock to Left Command",
                                 "from": {
-                                    "key_code": "right_option",
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "left_command" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Left Command to Hyper Key",
+                                "from": {
+                                    "key_code": "left_command",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
@@ -18,7 +27,7 @@
                                         "modifiers": ["left_control", "left_option"]
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "right_option" }],
+                                "to_if_alone": [{ "key_code": "left_command" }],
                                 "type": "basic"
                             }
                         ]
@@ -118,21 +127,6 @@
                     }
                 ]
             },
-            "devices": [
-                {
-                    "identifiers": { "is_keyboard": true },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "caps_lock" },
-                            "to": [{ "key_code": "left_command" }]
-                        },
-                        {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "right_option" }]
-                        }
-                    ]
-                }
-            ],
             "name": "Default profile",
             "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
