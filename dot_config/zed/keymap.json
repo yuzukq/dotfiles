@@ -68,13 +68,42 @@
     "context": "Workspace",
     "bindings": {
       // centered_layout の設定に基づき、エディタを中央寄せするモードをON/OFF
-      "ctrl-alt-cmd-c": "workspace::ToggleCenteredLayout",
+      "ctrl-alt-cmd-x": "workspace::ToggleCenteredLayout",
       // 集中モード(Zen): 1ファイルに集中したいときに、
       // 全ドックの表示/非表示(workspace::ToggleAllDocks)と
       // centered_layout のON/OFFをまとめて切り替える。
       // ドックは直前の開閉状態を覚えているので、もう一度押せば
       // ドックが元通り開き、centered_layoutもOFFに戻る(比較モード)。
       "ctrl-alt-cmd-z": ["workspace::SendKeystrokes", "alt-cmd-y ctrl-alt-cmd-c"]
+    }
+  },
+  {
+    "unbind": {
+      "cmd-shift-c": "collab_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-alt-cmd-c": "workspace::CopyRelativePath"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "unbind": {
+      "alt-cmd-shift-c": "workspace::CopyRelativePath"
+    }
+  },
+  {
+    "context": "OutlinePanel && not_editing",
+    "bindings": {
+      "ctrl-alt-cmd-c": "workspace::CopyRelativePath"
+    }
+  },
+  {
+    "context": "OutlinePanel && not_editing",
+    "unbind": {
+      "alt-cmd-shift-c": "workspace::CopyRelativePath"
     }
   }
 ]
