@@ -75,7 +75,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Right Command + E to Home (Ctrl+A)",
+                                "description": "Right Command + E to Line Start (Cmd+Left)",
                                 "from": {
                                     "key_code": "e",
                                     "modifiers": {
@@ -85,14 +85,14 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "a",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "left_arrow",
+                                        "modifiers": ["left_command"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
-                                "description": "Right Command + R to End (Ctrl+E)",
+                                "description": "Right Command + R to Line End (Cmd+Right)",
                                 "from": {
                                     "key_code": "r",
                                     "modifiers": {
@@ -102,8 +102,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "e",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "right_arrow",
+                                        "modifiers": ["left_command"]
                                     }
                                 ],
                                 "type": "basic"
