@@ -210,6 +210,53 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Eisu/Kana via Combo (F+D / J+K, Built-in Keyboard Only)",
+                        "manipulators": [
+                            {
+                                "description": "F+D -> Eisu (English input)",
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "identifiers": [{ "is_built_in_keyboard": true }]
+                                    }
+                                ],
+                                "from": {
+                                    "simultaneous": [{ "key_code": "f" }, { "key_code": "d" }],
+                                    "simultaneous_options": {
+                                        "detect_key_down_uninterruptedly": true,
+                                        "key_down_order": "insensitive",
+                                        "key_up_order": "insensitive",
+                                        "key_up_when": "any"
+                                    },
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "japanese_eisuu" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "J+K -> Kana (Japanese input)",
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "identifiers": [{ "is_built_in_keyboard": true }]
+                                    }
+                                ],
+                                "from": {
+                                    "simultaneous": [{ "key_code": "j" }, { "key_code": "k" }],
+                                    "simultaneous_options": {
+                                        "detect_key_down_uninterruptedly": true,
+                                        "key_down_order": "insensitive",
+                                        "key_up_order": "insensitive",
+                                        "key_up_when": "any"
+                                    },
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "japanese_kana" }],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
