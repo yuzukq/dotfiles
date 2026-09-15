@@ -3,7 +3,8 @@ local config = wezterm.config_builder()
 
 -- デフォルトシェルの設定
 -- oh-my-posh 等のプロファイル設定は Documents\PowerShell\ 側 (pwsh用) にあるので注意
-config.default_prog = { "pwsh.exe", "-NoLogo" }
+-- config.default_prog = { "pwsh.exe", "-NoLogo" }
+config.default_prog = { "powershell.exe", "-NoLogo" }
 
 -- 見た目
 config.color_scheme = "lovelace"
@@ -103,6 +104,8 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
+	{ key = "[", mods = "CTRL", action = wezterm.action.ActivateTabRelative(-1) },
+	{ key = "]", mods = "CTRL", action = wezterm.action.ActivateTabRelative(1) },
 }
 
 return config
