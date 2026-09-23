@@ -1,10 +1,8 @@
-// Zed キーマップ
-//
-// キーバインドの設定方法については Zed のドキュメントを参照:
-// https://zed.dev/docs/key-bindings
+
+// Zed のドキュメント: https://zed.dev/docs/key-bindings
 //
 // デフォルトのキーバインド一覧は、コマンドパレットから
-// `zed: open default keymap` を実行すると確認できる
+// `zed: open default keymap` を実行すると確認可能
 [
   {
     "context": "Workspace",
@@ -45,6 +43,7 @@
   {
     "context": "Workspace",
     "bindings": {
+      // Hyper+oで最近使ったプロジェクトに切り替え
       "ctrl-alt-cmd-o": "projects::OpenRecent"
     }
   },
@@ -55,22 +54,36 @@
     }
   },
   {
-    "bindings": {
-      "ctrl-alt-cmd-[": "editor::MoveToPreviousCommentParagraph"
+    // デフォルトではインデント操作(Outdent/Indent)で埋まっているので
+    // 段落ジャンプで使う前に無効化
+    "context": "Editor",
+    "unbind": {
+      "cmd-[": "editor::Outdent",
+      "cmd-]": "editor::Indent"
     }
   },
   {
+    // 現在のブロックを選択する，AST単位の移動を兼用中
+    "context": "Editor",
     "bindings": {
-      "ctrl-alt-cmd-]": "editor::MoveToNextCommentParagraph"
+      "cmd-[": "editor::SelectPreviousSyntaxNode",
+      "cmd-]": "editor::SelectNextSyntaxNode"
+    }
+  },
+  {
+    // 空行区切りのコードブロック単位でジャンプ
+    "context": "Editor",
+    "bindings": {
+      "cmd-ctrl-[": "editor::MoveToStartOfParagraph",
+      "cmd-ctrl-]": "editor::MoveToEndOfParagraph"
     }
   },
   {
     "context": "Workspace",
     "bindings": {
+      // ZENモード
       // centered_layout の設定に基づき、エディタを中央寄せするモードをON/OFF
       "ctrl-alt-cmd-x": "workspace::ToggleCenteredLayout",
-      // 集中モード(Zen): 1ファイルに集中したいときに、
-      // 全ドックの表示/非表示(workspace::ToggleAllDocks)と
       // centered_layout のON/OFFをまとめて切り替える。
       // ドックは直前の開閉状態を覚えているので、もう一度押せば
       // ドックが元通り開き、centered_layoutもOFFに戻る(比較モード)。
