@@ -44,7 +44,10 @@
     "context": "Workspace",
     "bindings": {
       // Hyper+oで最近使ったプロジェクトに切り替え
-      "ctrl-alt-cmd-o": "projects::OpenRecent"
+      "ctrl-alt-cmd-o": "projects::OpenRecent",
+      // 右ドックのgitとagentパネル呼び出し
+      "ctrl-alt-cmd-g": "git_panel::ToggleFocus",
+      "ctrl-alt-cmd-h": "agent::ToggleFocus"
     }
   },
   {
