@@ -28,16 +28,24 @@
       "type": "registry",
     },
   },
-  "buffer_font_weight": 600.0,
+  "buffer_font_weight": 550.0,
   "buffer_font_family": "Maple Mono",
+  "buffer_font_fallbacks": ["Noto Sans JP"],
   "ui_font_family": "Maple Mono",
+  "ui_font_fallbacks": ["Noto Sans JP"],
   "ui_font_weight": 900.0,
   "terminal": {
     "dock": "bottom",
-    "font_weight": 500.0,
+    "font_family": "Maple Mono",
+    "font_fallbacks": ["Noto Sans JP"],
+    "font_weight": 700.0,
     "font_size": 16.0,
   },
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme"
+  },
   "agent": {
     "dock": "right",
     "favorite_models": [],
@@ -50,8 +58,8 @@
   "ui_font_size": 17.0,
   "buffer_font_size": 16.0,
   "theme": {
-    "mode": "system",
-    "light": "One Light",
+    "mode": "dark",
+    "light": "Resonance with Hatsune Miku Light",
     "dark": "Resonance with Hatsune Miku",
   },
   "git": {
