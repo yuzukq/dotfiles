@@ -1,13 +1,13 @@
-# --- 見た目・フォント ---
-{{- if eq .chezmoi.os "darwin" }}
+# --- フォント ---
 font-size = 16
-{{- else }}
-font-size = 14
-{{- end }}
 adjust-cell-height = 10%
 # フォントファミリー
-font-family = Maple Fonts Noto NF
+# 英字Maple Mono
+font-family = Maple Mono
+# 日本語用．
+font-family = Noto Sans JP
 font-style = Bold
+# ---------------
 
 # テーマ
 theme = Material Design Colors
@@ -44,11 +44,11 @@ window-padding-balance = true
 
 # 入力中はマウスカーソルを隠す
 mouse-hide-while-typing = true
-{{ if eq .chezmoi.os "darwin" }}
+
 # --- Macネイティブな挙動 ---
 macos-titlebar-style = transparent
 macos-window-shadow = true
-{{ end }}
+
 # --- 操作性 ---
 # 選択しただけでクリップボードにコピー
 copy-on-select = true
@@ -57,41 +57,44 @@ clipboard-read = allow
 clipboard-write = allow
 
 # --- キーバインド設定（画面分割） ---
-{{- $mod := "ctrl" }}
-{{- if eq .chezmoi.os "darwin" }}
-{{- $mod = "cmd" }}
-{{- end }}
 # マルチプレクサ側でペイン分割するのでコメントアウト
-# {{ $mod }}+Enter で「下に」分割
-# keybind = {{ $mod }}+enter=new_split:down
-# {{ $mod }}+Shift+Enter で「右に」分割
-# keybind = {{ $mod }}+shift+enter=new_split:right
-# {{ $mod }} + 矢印キー で分割した画面を「移動」
-# keybind = {{ $mod }}+left=goto_split:left
-# keybind = {{ $mod }}+right=goto_split:right
-# keybind = {{ $mod }}+up=goto_split:top
-# keybind = {{ $mod }}+down=goto_split:bottom
-# {{ $mod }} + Shift + 矢印キー でサイズを「調整」
-# keybind = {{ $mod }}+shift+left=resize_split:left,20
-# keybind = {{ $mod }}+shift+right=resize_split:right,20
-# keybind = {{ $mod }}+shift+up=resize_split:up,20
-# keybind = {{ $mod }}+shift+down=resize_split:down,20
+# cmd+Enter で「下に」分割
+# keybind = cmd+enter=new_split:down
+# cmd+Shift+Enter で「右に」分割
+# keybind = cmd+shift+enter=new_split:right
+# cmd + 矢印キー で分割した画面を「移動」
+# keybind = cmd+left=goto_split:left
+# keybind = cmd+right=goto_split:right
+# keybind = cmd+up=goto_split:top
+# keybind = cmd+down=goto_split:bottom
+# cmd + Shift + 矢印キー でサイズを「調整」
+# keybind = cmd+shift+left=resize_split:left,20
+# keybind = cmd+shift+right=resize_split:right,20
+# keybind = cmd+shift+up=resize_split:up,20
+# keybind = cmd+shift+down=resize_split:down,20
 
-# {{ $mod }} + W で現在の「ペイン（分割）」を閉じる
-keybind = {{ $mod }}+w=close_surface
-# {{ $mod }} + Shift + W でウィンドウを閉じる
-keybind = {{ $mod }}+shift+w=close_window
+# cmd + W で現在の「ペイン（分割）」を閉じる
+keybind = cmd+w=close_surface
+# cmd + Shift + W でウィンドウを閉じる
+keybind = cmd+shift+w=close_window
 
 # herdr にタブ/ワークスペース切り替えを渡すため、Ghostty 標準の
 # goto_split / native tab 切り替えバインドを解除してキーを通過させる
-keybind = {{ $mod }}+[=unbind
-keybind = {{ $mod }}+]=unbind
-keybind = {{ $mod }}+shift+[=unbind
-keybind = {{ $mod }}+shift+]=unbind
+keybind = cmd+[=unbind
+keybind = cmd+]=unbind
+keybind = cmd+shift+[=unbind
+keybind = cmd+shift+]=unbind
 
 # herdr の新規タブ (cmd+n) に渡すため、Ghostty 標準の new_window を解除
 # （cmd+shift+n は Ghostty 側で未割り当てのため対応不要）
-keybind = {{ $mod }}+n=unbind
+keybind = cmd+n=unbind
+
+# --- カーソル ---
+# herdr 内ではシェル統合のカーソル形状指定が届かずブロックのままになるため明示する
+cursor-style = bar
+# テーマ既定の #eaeaea だと点滅時に白飛びするのでミクティールにする
+cursor-color = #39C5BB
+cursor-text = #000000
 
 # --- カーソルシェーダー ---
 # カーソル移動時
