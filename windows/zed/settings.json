@@ -1,0 +1,77 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent_buffer_font_size": 19.0,
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "ui_font_weight": 900.0,
+  "buffer_font_weight": 750.0,
+  "buffer_font_family": "Maple Mono NF",
+  "buffer_font_fallbacks": ["Noto Sans JP"],
+  "ui_font_family": "Maple Mono NF",
+  "ui_font_fallbacks": ["Noto Sans JP"],
+  "terminal": {
+    "font_family": "Maple Mono NF",
+    "font_fallbacks": ["Noto Sans JP"],
+    "font_weight": 700.0,
+    "font_size": 17.0
+  },
+  "cursor_animation": {
+    "enabled": true
+  },
+  "cursor_shape": "bar",
+  "centered_layout": {
+    "left_padding": 0.2,
+    "right_padding": 0.2,
+  },
+  "file_types": {
+    "XML": ["svg"],
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry",
+    },
+    "github-copilot-cli": {
+      "type": "registry",
+    },
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+      "location": "status_bar"
+    }
+  },
+  "project_panel": {
+    "auto_fold_dirs": false,
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "right",
+    "tree_view": true,
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "cli_default_open_behavior": "existing_window",
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Material Icon Theme"
+  },
+  "ui_font_size": 20.0,
+  "buffer_font_size": 17.0,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Resonance with Hatsune Miku",
+  },
+}

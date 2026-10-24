@@ -8,8 +8,10 @@ config.default_prog = { "powershell.exe", "-NoLogo" }
 
 -- 見た目
 config.color_scheme = "lovelace"
+-- Mac の Ghostty と揃える (英字: Maple Mono / 日本語: Noto Sans JP, Bold)
 config.font = wezterm.font_with_fallback({
-	"Maple Mono NF",
+	{ family = "Maple Mono NF", weight = "Bold" },
+	{ family = "Noto Sans JP", weight = "Bold" },
 	"Consolas",
 })
 config.font_size = 16.0
